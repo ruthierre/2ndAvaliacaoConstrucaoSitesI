@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/records.css">
     <link rel="stylesheet" href="css/modal.css">
     <script src="main.js" defer></script>
-    <title>CRUD</title>
+    <title>frontend</title>
 </head>
 
 <body>
@@ -21,8 +21,11 @@
         <h1 class="header-title">Cadastro de Produtos</h1>
     </header>
     <main>
-        <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Produto</button>
-        <table id="tableClient" class="records">
+        <span>
+            <button type="button" class="button blue mobile" id="cadastrarproduto">Cadastrar Produto</button>
+            <button id="cadastrarCategoria" class="button left">Cadastrar Categoria</button>
+        </span>
+        <table id="tableproduto" class="records">
             <thead>
                 <tr>
                     <th>Produto</th>
@@ -39,7 +42,7 @@
         <div class="modal" id="modal">
             <div class="modal-content">
                 <header class="modal-header">
-                    <h2>Novo Cliente</h2>
+                    <h2>Novo Produto</h2>
                     <span class="modal-close" id="modalClose">&#10006;</span>
                 </header>
                 <form id="form" class="modal-form">
@@ -47,7 +50,7 @@
                         required>
                     <input type="text" id="description" class="modal-field" placeholder="descrição do produto" required>
                     <input type="text" id="category" class="modal-field" placeholder="categoria do produto" required>
-                    <input type="text" id="price" class="modal-field" placeholder="preço do produto" required>
+                    <input type="number" id="price" class="modal-field" placeholder="preço do produto" required>
                 </form>
                 <footer class="modal-footer">
                     <button id="salvar" class="button green">Salvar</button>
