@@ -12,6 +12,10 @@ const closeModal = () => {
 const getLocalStorage = () => JSON.parse(localStorage.getItem('db_produto')) ?? []
 const setLocalStorage = (dbProduto) => localStorage.setItem("db_produto", JSON.stringify(dbProduto))
 
+const createCategory = () => {
+    window.location.href = 'categoria.html'
+}
+
 // CRUD - create read update delete
 const deleteproduto = (index) => {
     const dbProduto = readproduto()
@@ -43,7 +47,7 @@ const clearFields = () => {
     const fields = document.querySelectorAll('.modal-field')
     fields.forEach(field => field.value = "")
     document.getElementById('name').dataset.index = 'new'
-    document.querySelector(".modal-header>h2").textContent  = 'Novo produtoe'
+    document.querySelector(".modal-header>h2").textContent  = 'Novo produto'
 }
 
 const saveproduto = () => {
@@ -98,7 +102,7 @@ const fillFields = (produto) => {
     document.getElementById('description').value = produto.description
     document.getElementById('category').value = produto.category
     document.getElementById('price').value = produto.price
-    document.getElementById('nome').dataset.index = produto.index
+    document.getElementById('name').dataset.index = produto.index
 }
 
 const editproduto = (index) => {
@@ -118,7 +122,7 @@ const editDelete = (event) => {
             editproduto(index)
         } else {
             const produto = readproduto()[index]
-            const response = confirm(`Deseja realmente excluir o produtoe ${produto.name}`)
+            const response = confirm(`Deseja realmente excluir o produto ${produto.name}`)
             if (response) {
                 deleteproduto(index)
                 updateTable()
@@ -144,3 +148,8 @@ document.querySelector('#tableproduto>tbody')
 
 document.getElementById('cancelar')
     .addEventListener('click', closeModal)
+
+document.getElementById('cadastrarCategoria')
+    .addEventListener('click', createCategory)
+
+ 

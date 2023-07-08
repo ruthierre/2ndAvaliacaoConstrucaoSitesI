@@ -12,32 +12,30 @@
     <link rel="stylesheet" href="css/button.css">
     <link rel="stylesheet" href="css/records.css">
     <link rel="stylesheet" href="css/modal.css">
-    <script src="main.js" defer></script>
+    <script src="categoria.js" defer></script>
     <title>frontend</title>
 </head>
 
 <body>
     <header>
-        <h1 class="header-title">Cadastro de Produtos</h1>
+        <h1 class="header-title">Cadastro de Categorias</h1>
     </header>
     <main>
         <div class="search-box">
-            <input type="text" placeholder="Pesquise pelo ID ou nome do produto">
+            <input type="text" placeholder="Pesquise a categoria ou seu ID">
             <a href="#" class="search-btn">
                 <img src="img/loupeIcon.svg" alt="Loupe Icon" width="30" height="30">
             </a>
         </div>
         <span>
+            <button id="cadastrarcategoria" class="button left">Cadastrar Categoria</button>
             <button type="button" class="button blue mobile" id="cadastrarproduto">Cadastrar Produto</button>
-            <button id="cadastrarCategoria" class="button left">Cadastrar categoria</button>
         </span>
-        <table id="tableproduto" class="records">
+        <table id="tablecategoria" class="records">
             <thead>
                 <tr>
-                    <th>Produto</th>
+                    <th>categoria</th>
                     <th>Descrição</th>
-                    <th>Categoria</th>
-                    <th>Preço</th>
                     <th>Ação</th>
                 </tr>
             </thead>
@@ -48,15 +46,12 @@
         <div class="modal" id="modal">
             <div class="modal-content">
                 <header class="modal-header">
-                    <h2>Novo Produto</h2>
+                    <h2>Nova Categoria</h2>
                     <span class="modal-close" id="modalClose">&#10006;</span>
                 </header>
                 <form id="form" class="modal-form">
-                    <input type="text" id="name" data-index="new" class="modal-field" placeholder="Nome do produto"
-                        required>
-                    <input type="text" id="description" class="modal-field" placeholder="descrição do produto" required>
-                    <input type="text" id="category" class="modal-field" placeholder="categoria do produto" required>
-                    <input type="number" id="price" class="modal-field" placeholder="preço do produto" required>
+                    <input type="text" id="category" class="modal-field" placeholder=" nome da categoria " required>
+                    <input type="text" id="description" class="modal-field" placeholder="descrição da categoria" required>
                 </form>
                 <footer class="modal-footer">
                     <button id="salvar" class="button green">Salvar</button>
