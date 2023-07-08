@@ -44,6 +44,31 @@ main{
     gap: 20px;
 }
 
+order{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.search-box{
+    box-size: border-box;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 5vh;
+    background: transparent;   
+}
+
+.search-box input{
+    background: transparent;
+    color: var(--primary-color);
+    flex:1;
+    border: 0;
+    outline: none;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
 footer{
     width:100;
     text-align: center;
