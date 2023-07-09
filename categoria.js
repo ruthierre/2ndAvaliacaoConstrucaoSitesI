@@ -53,7 +53,7 @@ const clearFields = () => {
 const savecategoria = () => {
     if (isValidFields()) {
         const categoria = {
-            categoria: document.getElementById('category').value,
+            category: document.getElementById('category').value,
             description: document.getElementById('description').value
         }
         const index = document.getElementById('category').dataset.index
