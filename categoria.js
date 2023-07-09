@@ -17,13 +17,11 @@ const createProduto = () => {
 
 /// CRUD da Categoria /////
 
-const creatCategoria = (categoria) => {
-    const dbcategoria = getLocalStorage()
-    dbcategoria.push(categoria)
+const deleteCategoria = (index) => {
+    const dbcategoria = readCategoria()
+    dbcategoria.splice(index, 1)
     setLocalStorage(dbcategoria)
 }
-
-const readCategoria = () => getLocalStorage()
 
 const updateCategoria = (index, categoria ) => {
     const dbcategoria = readCategoria()
@@ -31,9 +29,11 @@ const updateCategoria = (index, categoria ) => {
     setLocalStorage(dbcategoria)
 }
 
-const deleteCategoria = (index) => {
-    const dbcategoria = readCategoria()
-    dbcategoria.splice(index, 1)
+const readCategoria = () => getLocalStorage()
+
+const creatCategoria = (categoria) => {
+    const dbcategoria = getLocalStorage()
+    dbcategoria.push(categoria)
     setLocalStorage(dbcategoria)
 }
 
@@ -96,6 +96,7 @@ const updateTable = () => {
 const fillFields = (categoria) => {
     document.getElementById('category').value = categoria.category
     document.getElementById('description').value = categoria.description
+    document.getElementById('category').dataset.index = categoria.index
 }
 
 const editcategoria = (index) => {
@@ -119,10 +120,15 @@ const editDelete = (event) => {
             if (response) {
                 deleteCategoria(index)
                 updateTable()
+                alert(`Categoria ${categoria.category} excluido com sucesso`)
             }
         }
     }
 
+}
+
+const searchBtn = () => {
+    return alert(`pesquisa realizada com sucesso!`)
 }
 
 updateTable()
@@ -146,3 +152,6 @@ document.getElementById('cancelar')
 
 document.getElementById('cadastrarproduto')
     .addEventListener('click', createProduto)
+
+document.getElementById('searchBtn') 
+    .addEventListener('click', searchBtn)

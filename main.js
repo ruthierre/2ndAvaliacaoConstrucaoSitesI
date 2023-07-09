@@ -126,9 +126,14 @@ const editDelete = (event) => {
             if (response) {
                 deleteproduto(index)
                 updateTable()
+                alert(`Produto ${produto.name} excluido com sucesso`)
             }
         }
     }
+}
+
+const searchBtn = () => {
+    return alert(`pesquisa realizada com sucesso!`)
 }
 
 updateTable()
@@ -152,4 +157,5 @@ document.getElementById('cancelar')
 document.getElementById('cadastrarCategoria')
     .addEventListener('click', createCategory)
 
- 
+document.getElementById('searchBtn') 
+    .addEventListener('click', searchBtn)
